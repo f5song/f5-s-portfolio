@@ -119,9 +119,8 @@ const projectsData: Record<string, Project> = {
   },
 }
 
-
 export async function GET(req: NextRequest, context: { params: { slug: string } }) {
-  const { slug } = context.params; // ✅ ใช้ context.params.slug
+  const { slug } = context.params;
 
   const project = projectsData[slug];
 
@@ -131,3 +130,4 @@ export async function GET(req: NextRequest, context: { params: { slug: string } 
 
   return NextResponse.json(project);
 }
+
