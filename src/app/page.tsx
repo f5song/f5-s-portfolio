@@ -3,7 +3,7 @@
 import { Inter } from "next/font/google";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Head from "next/head";
-import { Link, Element } from "react-scroll";
+import { Element } from "react-scroll";
 import { GlowingOrb } from "../components/glowing-orb";
 import { ProjectCard } from "../components/project-card";
 import { SkillCategory } from "../components/skill-category";
@@ -107,9 +107,6 @@ const skillCategories = [
 ];
 
 export default function Home() {
-  const { scrollYProgress } = useScroll();
-  const yRange = useTransform(scrollYProgress, [0, 0.9], [0, 1]);
-
   return (
     <>
       <Navbar />
@@ -144,8 +141,9 @@ export default function Home() {
             >
               <h1 className="text-6xl md:text-7xl font-bold">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
-                  Hello! I'm
+                  Hello! I&apos;m
                 </span>
+
                 <br />
                 <span className="text-white">Puttaraporn Jitpranee</span>
                 <br />
@@ -209,9 +207,9 @@ export default function Home() {
                 </motion.div>
                 <div className="md:w-2/3">
                   <p className="text-purple-200 text-lg leading-relaxed">
-                    I am a third-year IT student at King Mongkut's Institute of
-                    Technology Ladkrabang (KMITL) with a strong passion for
-                    full-stack development.
+                    I&apos;m a third-year IT student at King Mongkut&apos;s
+                    Institute of Technology Ladkrabang (KMITL) with a strong
+                    passion for full-stack development.
                   </p>
 
                   <p className="text-purple-200 text-lg leading-relaxed mt-4">
