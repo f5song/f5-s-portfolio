@@ -1,4 +1,5 @@
-import { NextResponse } from "next/server"
+import { NextResponse, NextRequest } from "next/server"
+
 
 interface Project {
   title: string
@@ -118,13 +119,15 @@ const projectsData: Record<string, Project> = {
   },
 }
 
-export async function GET(req: Request, { params }: { params: { slug: string } }) {
-  const slug = params.slug
-  const project = projectsData[slug]
+
+export async function GET(req: NextRequest, context: { params: { slug: string } }) {
+  const { slug } = context.params; // ✅ ใช้ context.params.slug
+
+  const project = projectsData[slug];
 
   if (!project) {
-    return NextResponse.json({ message: "Project not found" }, { status: 404 })
+    return NextResponse.json({ message: "Project not found" }, { status: 404 });
   }
 
-  return NextResponse.json(project)
+  return NextResponse.json(project);
 }
