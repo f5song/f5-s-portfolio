@@ -1,7 +1,7 @@
 "use client";
 
 import { Inter } from "next/font/google";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import Head from "next/head";
 import { Element } from "react-scroll";
 import { GlowingOrb } from "../components/glowing-orb";
