@@ -118,8 +118,8 @@ const projectsData: Record<string, Project> = {
   },
 }
 
-export async function GET(req: NextRequest, context: { params: { slug?: string } }) {
-  const slug = context.params?.slug; // ✅ ตรวจสอบ params ก่อนใช้
+export async function GET(req: NextRequest) {
+  const slug = req.nextUrl.pathname.split("/").pop(); // ✅ ดึงค่า slug จาก URL
 
   if (!slug || !projectsData[slug]) {
     return NextResponse.json({ message: "Project not found" }, { status: 404 });
