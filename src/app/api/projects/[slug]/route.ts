@@ -1,16 +1,15 @@
-import { NextResponse, NextRequest } from "next/server"
-
+import { NextResponse, NextRequest } from "next/server";
 
 interface Project {
-  title: string
-  description: string
-  images: string[]
-  technologies: string[]
-  githubLink: string
-  liveLink?: string
-  challenges: string[]
-  learnings: string[]
-  futureImprovements: string[]
+  title: string;
+  description: string;
+  images: string[];
+  technologies: string[];
+  githubLink: string;
+  liveLink?: string;
+  challenges: string[];
+  learnings: string[];
+  futureImprovements: string[];
 }
 
 const projectsData: Record<string, Project> = {
@@ -119,15 +118,13 @@ const projectsData: Record<string, Project> = {
   },
 }
 
-export async function GET(req: NextRequest, context: { params: { slug: string } }) {
-  const { slug } = context.params;
+export async function GET(req: NextRequest, context: { params: { slug?: string } }) {
+  const slug = context.params?.slug; // ✅ ตรวจสอบ params ก่อนใช้
 
-  const project = projectsData[slug];
-
-  if (!project) {
+  if (!slug || !projectsData[slug]) {
     return NextResponse.json({ message: "Project not found" }, { status: 404 });
   }
 
-  return NextResponse.json(project);
+  return NextResponse.json(projectsData[slug]);
 }
 
