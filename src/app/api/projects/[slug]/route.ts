@@ -13,6 +13,50 @@ interface Project {
 }
 
 const projectsData: Record<string, Project> = {
+  AroiDee: {
+    title: "AroiDee",
+    description:
+      "A recipe management web application that allows users to search, save, and share recipes while tracking calorie intake. The app features advanced search by ingredients and category, personalized meal suggestions, a meal planner with automatic calorie calculations, and user-generated recipe sharing. Designed for a seamless and efficient meal planning experience.",
+    images: [
+      "/images/AroiDee/1.jpeg",
+      "/images/AroiDee/2.jpeg",
+      "/images/AroiDee/3.jpeg",
+      "/images/AroiDee/4.jpeg",
+      "/images/AroiDee/5.jpeg",
+      "/images/AroiDee/6.jpeg",
+      "/images/AroiDee/7.jpeg"
+    ],
+    technologies: [
+      "TypeScript",
+      "Node.js",
+      "React",
+      "Express.js",
+      "PostgreSQL",
+      "NeonDB",
+      "Vercel"
+    ],
+    githubLink: "https://github.com/f5song/AroiDee-Frontend",
+    liveLink: "https://aroi-dee-frontend.vercel.app/", 
+    challenges: [
+      "Implementing an efficient recipe search system with ingredient-based filtering",
+      "Developing a dynamic meal planner with real-time calorie tracking",
+      "Optimizing database queries for handling a large number of recipes and nutrition data",
+      "Ensuring seamless user experience across different devices"
+    ],
+    learnings: [
+      "Enhanced knowledge in designing and managing relational databases (PostgreSQL, NeonDB)",
+      "Improved backend API design with Express.js for better scalability",
+      "Gained experience in integrating real-time meal tracking and nutritional calculations",
+      "Deepened understanding of deploying full-stack applications using Vercel"
+    ],
+    futureImprovements: [
+      "Introduce AI-powered meal recommendations based on user preferences",
+      "Develop a mobile application for a more accessible user experience",
+      "Enhance user engagement with social features like recipe ratings and comments",
+      "Expand dietary filters for better personalized meal planning"
+    ],
+  },
+  
   Connextra: {
     title: "Connextra",
     description:

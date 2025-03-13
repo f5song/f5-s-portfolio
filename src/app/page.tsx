@@ -45,6 +45,7 @@ import {
   SiPostman,
   SiGithub,
   SiSqlite,
+  SiVercel,
 } from "react-icons/si";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -102,6 +103,8 @@ const skillCategories = [
       { name: "AWS", icon: FaAws },
       { name: "Jenkins", icon: SiJenkins },
       { name: "Postman", icon: SiPostman },
+      { name: "Vercel", icon: SiVercel }, // เพิ่ม Vercel
+      { name: "NeonDB", icon: SiPostgresql }, // ใช้ PostgreSQL icon สำหรับ NeonDB
     ],
   },
 ];
@@ -153,13 +156,6 @@ export default function Home() {
                 A passionate developer & technology enthusiast
               </p>
               <div className="flex gap-4 justify-center mt-8">
-                <motion.button
-                  className="px-8 py-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold hover:from-pink-500 hover:to-purple-500 transition-all duration-300"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Contact Me
-                </motion.button>
                 <motion.a
                   href="/resume.pdf"
                   download="Puttaraporn_Jitpranee_Resume.pdf"
@@ -301,6 +297,22 @@ export default function Home() {
               </motion.h2>
 
               <div className="space-y-32">
+                <ProjectCard
+                  title="AroiDee"
+                  description="A recipe management web app with advanced search, meal planning, calorie tracking, personalized meal suggestions, and user-generated recipes. Designed to help users plan and maintain a healthy diet effortlessly."
+                  image="/images/AroiDee.png"
+                  imagePosition="right"
+                  technologies={[
+                    "TypeScript",
+                    "Node.js",
+                    "React",
+                    "Express.js",
+                    "PostgreSQL",
+                    "NeonDB",
+                    "Vercel",
+                  ]}
+                  slug="AroiDee"
+                />
                 <ProjectCard
                   title="Connextra"
                   description="A real-time chat application with instant messaging, group chats, friend management, message reactions, and user status updates. Designed for a seamless and interactive communication experience."
