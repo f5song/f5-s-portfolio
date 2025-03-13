@@ -157,8 +157,8 @@ export default function Home() {
               </p>
               <div className="flex gap-4 justify-center mt-8">
                 <motion.a
-                  href="/resume.pdf"
-                  download="Puttaraporn_Jitpranee_Resume.pdf"
+                  href="/puttaraporn_jit_resume.pdf"
+                  download="puttaraporn_jit_resume.pdf"
                   className="px-8 py-3 rounded-full border-2 border-purple-500 text-purple-300 font-semibold hover:bg-purple-500/20 transition-all duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
