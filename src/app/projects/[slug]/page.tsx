@@ -21,6 +21,7 @@ interface Project {
   challenges: string[];
   learnings: string[];
   futureImprovements: string[];
+  videoUrl?: string; // ✅ เพิ่ม field สำหรับลิงก์วิดีโอ
 }
 
 export default function ProjectDetail() {
@@ -129,6 +130,19 @@ export default function ProjectDetail() {
                 </button>
               </div>
             )}
+          </div>
+        )}
+         {/* 🎥 วิดีโอ Demo YouTube */}
+         {project.videoUrl && (
+          <div className="mb-10 flex justify-center">
+            <iframe
+              width="800"
+              height="450"
+              src={project.videoUrl.replace("watch?v=", "embed/")} // ✅ แปลง URL YouTube ให้อยู่ในรูปแบบ embed
+              title="Project Demo Video"
+              allowFullScreen
+              className="rounded-lg shadow-lg border border-gray-700"
+            ></iframe>
           </div>
         )}
 

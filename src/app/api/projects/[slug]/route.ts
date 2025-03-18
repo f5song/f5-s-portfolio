@@ -10,6 +10,7 @@ interface Project {
   challenges: string[];
   learnings: string[];
   futureImprovements: string[];
+  videoUrl?: string;
 }
 
 const projectsData: Record<string, Project> = {
@@ -99,6 +100,7 @@ const projectsData: Record<string, Project> = {
       "Expand job matching algorithm for better recommendations",
       "Integrate AI for skill-based job suggestions",
     ],
+    videoUrl: "https://www.youtube.com/watch?v=33VuDqEQBJA"
   },
   Shopdee: {
     title: "Shopdee",
