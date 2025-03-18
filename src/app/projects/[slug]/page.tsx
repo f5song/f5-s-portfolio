@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation"; // ✅ ใช้ useRouter ที่ถูกต้อง
 import { motion } from "framer-motion";
 import {
   FaGithub,
@@ -10,7 +10,6 @@ import {
   FaChevronRight,
   FaArrowLeft,
 } from "react-icons/fa";
-import router from "next/router";
 
 interface Project {
   title: string;
@@ -27,6 +26,7 @@ interface Project {
 export default function ProjectDetail() {
   const params = useParams();
   const slug = params.slug as string;
+  const router = useRouter(); // ✅ ใช้ useRouter() แทน next/router
 
   const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
@@ -79,13 +79,14 @@ export default function ProjectDetail() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white py-20">
-      {/* 🔙 ปุ่ม Back */}
+      {/* 🔙 ปุ่ม Back ✅ แก้ให้ถูกต้อง */}
       <button
-        onClick={() => router.back()}
+        onClick={() => router.back()} // ✅ ใช้ router.back() ที่ถูกต้อง
         className="flex items-center mb-6 text-purple-400 hover:text-purple-200 transition duration-300"
       >
         <FaArrowLeft className="mr-2" /> Back
       </button>
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -174,47 +175,6 @@ export default function ProjectDetail() {
                 </a>
               )}
             </div>
-          </div>
-
-          <div className="space-y-6">
-            <section>
-              <h2 className="text-2xl font-semibold mb-4 text-purple-300">
-                Challenges and Learnings
-              </h2>
-              <div className="space-y-4">
-                <div>
-                  <h3 className="text-xl font-semibold mb-2 text-purple-200">
-                    Challenges Faced
-                  </h3>
-                  <ul className="list-disc list-inside text-gray-300 space-y-2">
-                    {project.challenges.map((challenge, index) => (
-                      <li key={index}>{challenge}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2 text-purple-200">
-                    Key Learnings
-                  </h3>
-                  <ul className="list-disc list-inside text-gray-300 space-y-2">
-                    {project.learnings.map((learning, index) => (
-                      <li key={index}>{learning}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-semibold mb-4 text-purple-300">
-                Future Improvements
-              </h2>
-              <ul className="list-disc list-inside text-gray-300 space-y-2">
-                {project.futureImprovements.map((improvement, index) => (
-                  <li key={index}>{improvement}</li>
-                ))}
-              </ul>
-            </section>
           </div>
         </div>
       </motion.div>
