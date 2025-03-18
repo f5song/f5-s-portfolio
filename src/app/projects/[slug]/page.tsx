@@ -8,7 +8,9 @@ import {
   FaExternalLinkAlt,
   FaChevronLeft,
   FaChevronRight,
+  FaArrowLeft,
 } from "react-icons/fa";
+import router from "next/router";
 
 interface Project {
   title: string;
@@ -77,6 +79,13 @@ export default function ProjectDetail() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white py-20">
+      {/* 🔙 ปุ่ม Back */}
+      <button
+        onClick={() => router.back()}
+        className="flex items-center mb-6 text-purple-400 hover:text-purple-200 transition duration-300"
+      >
+        <FaArrowLeft className="mr-2" /> Back
+      </button>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

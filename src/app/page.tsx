@@ -31,7 +31,6 @@ import {
 } from "react-icons/fa";
 import {
   SiTypescript,
-  SiSharp,
   SiC,
   SiPostgresql,
   SiMysql,
@@ -58,7 +57,6 @@ const skillCategories = [
       { name: "TypeScript", icon: SiTypescript },
       { name: "Python", icon: FaPython },
       { name: "Java", icon: FaJava },
-      { name: "C#", icon: SiSharp },
       { name: "C", icon: SiC },
       { name: "PHP", icon: FaPhp },
       { name: "SQL", icon: SiPostgresql },
