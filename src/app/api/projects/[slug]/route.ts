@@ -163,7 +163,7 @@ const projectsData: Record<string, Project> = {
 }
 
 export async function GET(req: NextRequest) {
-  const slug = req.nextUrl.pathname.split("/").pop(); // ✅ ดึงค่า slug จาก URL
+  const slug = req.nextUrl.pathname.split("/").pop();
 
   if (!slug || !projectsData[slug]) {
     return NextResponse.json({ message: "Project not found" }, { status: 404 });
