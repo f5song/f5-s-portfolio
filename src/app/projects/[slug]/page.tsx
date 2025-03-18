@@ -132,6 +132,22 @@ export default function ProjectDetail() {
             )}
           </div>
         )}
+        {/* 🎥 วิดีโอ Demo YouTube */}
+        {project.videoUrl && (
+          <div className="mb-10 flex justify-center">
+            <h2 className="text-2xl font-semibold mb-4 text-purple-300">
+              Demo
+            </h2>
+            <iframe
+              width="800"
+              height="450"
+              src={project.videoUrl.replace("watch?v=", "embed/")} // ✅ แปลง URL YouTube ให้อยู่ในรูปแบบ embed
+              title="Project Demo Video"
+              allowFullScreen
+              className="rounded-lg shadow-lg border border-gray-700"
+            ></iframe>
+          </div>
+        )}
 
         <div className="grid md:grid-cols-2 gap-12">
           <div className="space-y-6">
@@ -158,22 +174,6 @@ export default function ProjectDetail() {
                   </span>
                 ))}
               </div>
-            </section>
-
-            <section>
-              {/* 🎥 วิดีโอ Demo YouTube */}
-              {project.videoUrl && (
-                <div className="mb-10 flex justify-center">
-                  <iframe
-                    width="800"
-                    height="450"
-                    src={project.videoUrl.replace("watch?v=", "embed/")} // ✅ แปลง URL YouTube ให้อยู่ในรูปแบบ embed
-                    title="Project Demo Video"
-                    allowFullScreen
-                    className="rounded-lg shadow-lg border border-gray-700"
-                  ></iframe>
-                </div>
-              )}
             </section>
 
             <div className="flex space-x-4">
