@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useParams, useRouter } from "next/navigation"; // ✅ ใช้ useRouter ที่ถูกต้อง
+import { useParams, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import {
   FaGithub,
@@ -26,7 +26,7 @@ interface Project {
 export default function ProjectDetail() {
   const params = useParams();
   const slug = params.slug as string;
-  const router = useRouter(); // ✅ ใช้ useRouter() แทน next/router
+  const router = useRouter();
 
   const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
@@ -78,20 +78,24 @@ export default function ProjectDetail() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white py-20">
-      {/* 🔙 ปุ่ม Back ✅ แก้ให้ถูกต้อง */}
-      <button
-        onClick={() => router.back()} // ✅ ใช้ router.back() ที่ถูกต้อง
-        className="flex items-center mb-6 text-purple-400 hover:text-purple-200 transition duration-300"
-      >
-        <FaArrowLeft className="mr-2" /> Back
-      </button>
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white py-20 px-6">
+      {/* 🔙 ปุ่ม Back (ปรับใหม่) */}
+      <div className="max-w-5xl mx-auto">
+        <button
+          onClick={() => router.back()}
+          className="flex items-center px-5 py-3 rounded-lg bg-opacity-40 bg-gray-800 backdrop-blur-lg 
+                     hover:bg-opacity-60 transition duration-300 ease-in-out shadow-md text-purple-300 
+                     hover:text-white border border-purple-500"
+        >
+          <FaArrowLeft className="mr-2 text-lg" /> Back to Projects
+        </button>
+      </div>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="container mx-auto px-4 max-w-5xl"
+        className="container mx-auto px-4 max-w-5xl mt-6"
       >
         <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
           {project.title}
@@ -175,6 +179,47 @@ export default function ProjectDetail() {
                 </a>
               )}
             </div>
+          </div>
+
+          <div className="space-y-6">
+            <section>
+              <h2 className="text-2xl font-semibold mb-4 text-purple-300">
+                Challenges and Learnings
+              </h2>
+              <div className="space-y-4">
+                <div>
+                  <h3 className="text-xl font-semibold mb-2 text-purple-200">
+                    Challenges Faced
+                  </h3>
+                  <ul className="list-disc list-inside text-gray-300 space-y-2">
+                    {project.challenges.map((challenge, index) => (
+                      <li key={index}>{challenge}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2 text-purple-200">
+                    Key Learnings
+                  </h3>
+                  <ul className="list-disc list-inside text-gray-300 space-y-2">
+                    {project.learnings.map((learning, index) => (
+                      <li key={index}>{learning}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold mb-4 text-purple-300">
+                Future Improvements
+              </h2>
+              <ul className="list-disc list-inside text-gray-300 space-y-2">
+                {project.futureImprovements.map((improvement, index) => (
+                  <li key={index}>{improvement}</li>
+                ))}
+              </ul>
+            </section>
           </div>
         </div>
       </motion.div>
