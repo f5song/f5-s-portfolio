@@ -103,9 +103,17 @@ export default function ProjectDetail() {
         </h1>
 
         {/* ✅ ปรับ Layout ของรูปและวิดีโอ */}
-        <div className="mb-12 flex md:flex-row flex-col items-center gap-6">
+        <div
+          className={`mb-12 flex flex-col ${
+            project.videoUrl ? "md:flex-row" : "justify-center"
+          } items-center gap-6`}
+        >
           {/* 🔹 ภาพโปรเจค */}
-          <div className="md:w-1/2 flex justify-center relative">
+          <div
+            className={`flex justify-center relative ${
+              project.videoUrl ? "md:w-1/2" : "w-full"
+            }`}
+          >
             <div className="h-[600px] w-auto overflow-hidden rounded-lg shadow-lg relative">
               <img
                 src={project.images[currentImageIndex] || "/placeholder.svg"}

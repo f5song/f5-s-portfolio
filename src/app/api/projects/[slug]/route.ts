@@ -121,6 +121,7 @@ const projectsData: Record<string, Project> = {
       "Implement AI-driven product recommendations",
       "Enhance search and filtering capabilities",
     ],
+    videoUrl: "https://www.youtube.com/watch?v=WTpad1HoZm4"
   },
   RodRudee: {
     title: "RodRudee",

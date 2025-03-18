@@ -299,7 +299,7 @@ export default function Home() {
                   title="AroiDee"
                   description="A recipe management web app with advanced search, meal planning, calorie tracking, personalized meal suggestions, and user-generated recipes. Designed to help users plan and maintain a healthy diet effortlessly."
                   image="/images/AroiDee.png"
-                  imagePosition="right"
+                  imagePosition="left"
                   technologies={[
                     "TypeScript",
                     "Node.js",
