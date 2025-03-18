@@ -103,9 +103,9 @@ export default function ProjectDetail() {
         </h1>
 
         {/* ✅ ปรับ Layout ของรูปและวิดีโอ */}
-        <div className={`mb-12 flex ${project.videoUrl ? "md:flex-row" : "md:flex-col"} flex-col items-center gap-6`}>
+        <div className="mb-12 flex md:flex-row flex-col items-center gap-6">
           {/* 🔹 ภาพโปรเจค */}
-          <div className={`${project.videoUrl ? "md:w-1/2" : "w-full"} flex justify-center relative`}>
+          <div className="md:w-1/2 flex justify-center relative">
             <div className="h-[600px] w-auto overflow-hidden rounded-lg shadow-lg relative">
               <img
                 src={project.images[currentImageIndex] || "/placeholder.svg"}
@@ -153,35 +153,69 @@ export default function ProjectDetail() {
           )}
         </div>
 
-        {/* ✅ นำหัวข้อ Challenges and Learnings กลับมา */}
+        {/* ✅ Layout ใหม่: Project Overview ด้านซ้าย / Challenges and Learnings ด้านขวา */}
         <div className="grid md:grid-cols-2 gap-12">
+          {/* 🔹 ด้านซ้าย: Project Overview และ GitHub / Live Link */}
+          <div className="space-y-6">
+            <section>
+              <h2 className="text-2xl font-semibold mb-4 text-purple-300">
+                Project Overview
+              </h2>
+              <p className="text-gray-300 leading-relaxed">
+                {project.description}
+              </p>
+            </section>
+
+            <section>
+              <h3 className="text-xl font-semibold mb-2 text-purple-300">
+                Technologies Used
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {project.technologies.map((tech, index) => (
+                  <span
+                    key={index}
+                    className="bg-purple-800 text-purple-200 px-3 py-1 rounded-full text-sm"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </section>
+
+            {/* 🔗 GitHub และ Live Demo */}
+            <div className="mt-8 flex space-x-4">
+              <a
+                href={project.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded transition duration-300"
+              >
+                <FaGithub className="mr-2" /> GitHub Repo
+              </a>
+              {project.liveLink && (
+                <a
+                  href={project.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center bg-purple-600 hover:bg-purple-500 text-white font-bold py-2 px-4 rounded transition duration-300"
+                >
+                  <FaExternalLinkAlt className="mr-2" /> Live Demo
+                </a>
+              )}
+            </div>
+          </div>
+
+          {/* 🔹 ด้านขวา: Challenges and Learnings */}
           <div className="space-y-6">
             <section>
               <h2 className="text-2xl font-semibold mb-4 text-purple-300">
                 Challenges and Learnings
               </h2>
-              <div className="space-y-4">
-                <div>
-                  <h3 className="text-xl font-semibold mb-2 text-purple-200">
-                    Challenges Faced
-                  </h3>
-                  <ul className="list-disc list-inside text-gray-300 space-y-2">
-                    {project.challenges.map((challenge, index) => (
-                      <li key={index}>{challenge}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2 text-purple-200">
-                    Key Learnings
-                  </h3>
-                  <ul className="list-disc list-inside text-gray-300 space-y-2">
-                    {project.learnings.map((learning, index) => (
-                      <li key={index}>{learning}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+              <ul className="list-disc list-inside text-gray-300 space-y-2">
+                {project.challenges.map((challenge, index) => (
+                  <li key={index}>{challenge}</li>
+                ))}
+              </ul>
             </section>
 
             <section>
@@ -195,28 +229,6 @@ export default function ProjectDetail() {
               </ul>
             </section>
           </div>
-        </div>
-
-        {/* 🔗 GitHub และ Live Demo */}
-        <div className="mt-8 flex space-x-4">
-          <a
-            href={project.githubLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded transition duration-300"
-          >
-            <FaGithub className="mr-2" /> GitHub Repo
-          </a>
-          {project.liveLink && (
-            <a
-              href={project.liveLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center bg-purple-600 hover:bg-purple-500 text-white font-bold py-2 px-4 rounded transition duration-300"
-            >
-              <FaExternalLinkAlt className="mr-2" /> Live Demo
-            </a>
-          )}
         </div>
       </motion.div>
     </div>
