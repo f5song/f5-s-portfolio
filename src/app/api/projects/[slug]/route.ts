@@ -141,6 +141,7 @@ const projectsData: Record<string, Project> = {
       "Add real-time notifications for order updates",
       "Integrate POS system for better restaurant management",
     ],
+    videoUrl: "https://www.youtube.com/watch?v=JdiShqnbwow"
   },
   ILandedAirline: {
     title: "I Landed Airline",
@@ -161,6 +162,7 @@ const projectsData: Record<string, Project> = {
       "Add real-time flight tracking integration",
       "Improve user experience with a more dynamic UI",
     ],
+    videoUrl: "https://www.youtube.com/watch?v=V9An7QtOuAQ"
   },
 }
 
