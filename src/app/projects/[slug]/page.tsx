@@ -80,7 +80,7 @@ export default function ProjectDetail() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white py-20 px-6">
-      {/* 🔙 ปุ่ม Back (ปรับใหม่) */}
+      {/* 🔙 ปุ่ม Back */}
       <div className="max-w-5xl mx-auto">
         <button
           onClick={() => router.back()}
@@ -102,52 +102,36 @@ export default function ProjectDetail() {
           {project.title}
         </h1>
 
-        {project.images && project.images.length > 0 && (
-          <div className="mb-12 relative flex justify-center">
-            <div className="h-[800px] w-auto overflow-hidden rounded-lg shadow-lg">
+        {/* ✅ ปรับ Layout ของรูปและวิดีโอ */}
+        <div className={`mb-12 flex ${project.videoUrl ? "md:flex-row" : "md:flex-col"} flex-col items-center gap-6`}>
+          {/* 🔹 ภาพโปรเจค */}
+          <div className={`${project.videoUrl ? "md:w-1/2" : "w-full"} flex justify-center`}>
+            <div className="h-[600px] w-auto overflow-hidden rounded-lg shadow-lg">
               <img
                 src={project.images[currentImageIndex] || "/placeholder.svg"}
                 alt={`${project.title} - Image ${currentImageIndex + 1}`}
                 className="h-full w-auto object-contain rounded-lg transition-opacity duration-500"
               />
             </div>
+          </div>
 
-            {project.images.length > 1 && (
-              <div className="absolute top-1/2 transform -translate-y-1/2 flex justify-between w-full px-4">
-                <button
-                  onClick={prevImage}
-                  className="bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all duration-300"
-                  aria-label="Previous image"
-                >
-                  <FaChevronLeft />
-                </button>
-                <button
-                  onClick={nextImage}
-                  className="bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all duration-300"
-                  aria-label="Next image"
-                >
-                  <FaChevronRight />
-                </button>
-              </div>
-            )}
-          </div>
-        )}
-        {/* 🎥 วิดีโอ Demo YouTube */}
-        {project.videoUrl && (
-          <div className="mb-10 flex justify-center">
-            <h2 className="text-2xl font-semibold mb-4 text-purple-300">
-              Demo
-            </h2>
-            <iframe
-              width="800"
-              height="450"
-              src={project.videoUrl.replace("watch?v=", "embed/")} // ✅ แปลง URL YouTube ให้อยู่ในรูปแบบ embed
-              title="Project Demo Video"
-              allowFullScreen
-              className="rounded-lg shadow-lg border border-gray-700"
-            ></iframe>
-          </div>
-        )}
+          {/* 🎥 วิดีโอ Demo YouTube (ถ้ามี) */}
+          {project.videoUrl && (
+            <div className="md:w-1/2 flex flex-col items-center">
+              <h2 className="text-2xl font-semibold mb-4 text-purple-300">
+                Demo
+              </h2>
+              <iframe
+                width="100%"
+                height="350"
+                src={project.videoUrl.replace("watch?v=", "embed/")}
+                title="Project Demo Video"
+                allowFullScreen
+                className="rounded-lg shadow-lg border border-gray-700"
+              ></iframe>
+            </div>
+          )}
+        </div>
 
         <div className="grid md:grid-cols-2 gap-12">
           <div className="space-y-6">
@@ -196,47 +180,6 @@ export default function ProjectDetail() {
                 </a>
               )}
             </div>
-          </div>
-
-          <div className="space-y-6">
-            <section>
-              <h2 className="text-2xl font-semibold mb-4 text-purple-300">
-                Challenges and Learnings
-              </h2>
-              <div className="space-y-4">
-                <div>
-                  <h3 className="text-xl font-semibold mb-2 text-purple-200">
-                    Challenges Faced
-                  </h3>
-                  <ul className="list-disc list-inside text-gray-300 space-y-2">
-                    {project.challenges.map((challenge, index) => (
-                      <li key={index}>{challenge}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2 text-purple-200">
-                    Key Learnings
-                  </h3>
-                  <ul className="list-disc list-inside text-gray-300 space-y-2">
-                    {project.learnings.map((learning, index) => (
-                      <li key={index}>{learning}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-semibold mb-4 text-purple-300">
-                Future Improvements
-              </h2>
-              <ul className="list-disc list-inside text-gray-300 space-y-2">
-                {project.futureImprovements.map((improvement, index) => (
-                  <li key={index}>{improvement}</li>
-                ))}
-              </ul>
-            </section>
           </div>
         </div>
       </motion.div>
