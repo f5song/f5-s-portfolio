@@ -84,7 +84,7 @@ const projectsData: Record<string, Project> = {
     title: "Job4All",
     description:
       "An Android application designed to help individuals with disabilities find jobs. The platform provides job recommendations, filters for job searches, and an easy application process.",
-    images: ["/images/job4all/1.png", "/images/job4all/2.png", "/images/job4all/3.png", "/images/job4all/4.png", "/images/job4all/5.png", "/images/job4all/6.png", "/images/job4all/7.png", "/images/job4all/8.png"],
+    images: ["/images/Job4All/1.png", "/images/Job4All/2.png", "/images/Job4All/3.png", "/images/Job4All/4.png", "/images/Job4All/5.png", "/images/Job4All/6.png", "/images/Job4All/7.png", "/images/Job4All/8.png"],
     technologies: ["React Native (Expo)", "Node.js", "MongoDB"],
     githubLink: "https://github.com/f5song/Job4All",
     challenges: [
@@ -124,7 +124,7 @@ const projectsData: Record<string, Project> = {
     title: "RodRudee",
     description:
       "A restaurant management web application allowing users to place orders, track order statuses, and manage menus via an admin panel.",
-    images: ["/images/rodrudee/1.png", "/images/rodrudee/2.png", "/images/rodrudee/3.png", "/images/rodrudee/4.png", "/images/rodrudee/5.png", "/images/rodrudee/6.png", "/images/rodrudee/7.png"],
+    images: ["/images/RodRudee/1.png", "/images/RodRudee/2.png", "/images/RodRudee/3.png", "/images/RodRudee/4.png", "/images/RodRudee/5.png", "/images/RodRudee/6.png", "/images/RodRudee/7.png"],
     technologies: ["PHP", "HTML", "CSS", "Bootstrap", "MySQL"],
     githubLink: "https://github.com/f5song/rodrudee",
     challenges: [
@@ -144,7 +144,7 @@ const projectsData: Record<string, Project> = {
     title: "I Landed Airline",
     description:
       "An airline ticket booking website that allows users to search for flights, compare ticket prices, book tickets, and select their seats.",
-    images: ["/images/ilandedairline/1.png", "/images/ilandedairline/2.png", "/images/ilandedairline/3.png", "/images/ilandedairline/4.png", "/images/ilandedairline/5.png", "/images/ilandedairline/6.png", "/images/ilandedairline/7.png", "/images/ilandedairline/8.png"],
+    images: ["/images/ILandedAirline/1.png", "/images/ILandedAirline/2.png", "/images/ILandedAirline/3.png", "/images/ILandedAirline/4.png", "/images/ILandedAirline/5.png", "/images/ILandedAirline/6.png", "/images/ILandedAirline/7.png", "/images/ILandedAirline/8.png"],
     technologies: ["PHP", "HTML", "CSS", "MySQL"],
     githubLink: "https://github.com/sStoowie/ISAD-ilal",
     challenges: [
