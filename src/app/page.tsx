@@ -403,7 +403,7 @@ export default function Home() {
                     <FaCalendar className="mr-2" /> 2021 - 2025
                   </span>
                   <span className="bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center">
-                    <FaGraduationCap className="mr-2" /> Graduation
+                    <FaGraduationCap className="mr-2" /> Undergraduate
                   </span>
                 </div>
                 <h3 className="text-2xl font-semibold text-white mb-2">
