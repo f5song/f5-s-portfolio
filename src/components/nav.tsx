@@ -11,7 +11,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-purple-900/20 backdrop-blur-sm">
       <div className="container mx-auto px-6 py-3 flex justify-between items-center">
-        <div className="text-white text-xl font-bold">My Portfolio</div>
+        <div className="text-white text-xl font-bold">f5song</div>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6">

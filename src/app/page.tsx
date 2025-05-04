@@ -112,7 +112,7 @@ export default function Home() {
     <>
       <Navbar />
       <Head>
-        <title>My Portfolio</title>
+        <title>f5song</title>
         <meta name="description" content="Portfolio of Puttaraporn Jitpranee" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
@@ -409,7 +409,7 @@ export default function Home() {
                 <h3 className="text-2xl font-semibold text-white mb-2">
                   Bachelor of Science in IT
                 </h3>
-                <p className="text-purple-200 mb-4">Chulalongkorn University</p>
+                <p className="text-purple-200 mb-4">King Mongkut's Institute of Technology Ladkrabang</p>
                 <div className="flex items-center space-x-2 text-purple-200">
                   <FaUniversity className="text-purple-400" />{" "}
                   <span>KMITL</span>
