@@ -201,7 +201,7 @@ export default function Home() {
                 </motion.div>
                 <div className="md:w-2/3">
                   <p className="text-purple-200 text-lg leading-relaxed">
-                    I&apos;m a third-year IT student at King Mongkut&apos;s
+                    I&apos;m a final-year IT student at King Mongkut&apos;s
                     Institute of Technology Ladkrabang (KMITL) with a strong
                     passion for full-stack development.
                   </p>
